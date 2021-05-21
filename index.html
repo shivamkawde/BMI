@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="car-header text-center"><h1>BMI Calculator</h1></div>
+             <div class="card-body">
+                <form action="" class="w-50 m-auto" onsubmit="return false">
+                     <div class="formgrop">
+                        <label for="">Height</label>
+                         <input type="number" id="height" class="form-control" placeholder="In feet">
+                     </div>   
+                     <div class="formgrop">
+                        <label for="">Weight</label>
+                        <input type="number" id="weight" class="form-control" placeholder="In kg">
+                    </div>
+                    
+                    
+                    <br>  
+
+                    <div>
+                        <button type="submit" onclick="getbmi()" class="btn btn-success">Get BMI</button>
+                    </div>
+                    <br>
+                    <div class="formgrop">
+                        <label for="">BMI value </label>
+                        <input type="number" id="rr" class="form-control">
+                    </div>
+                    <div>
+                        <h3 style="color: red;" id="result"></h3>
+                    </div>
+
+                </form>
+                
+                
+
+             </div>
+             <div class="card-footer text-center " >Healthy BMI Range Between 19 to 25 </div>
+        </div>
+
+    </div>
+
+
+    <script>
+      function getbmi()
+      {
+      var heigth=document.getElementById('height').value;
+      var weight=document.getElementById('weight').value;
+      var m=heigth*12;
+      m=m*0.025;
+      var bmi=weight/(m*m);
+      
+      document.getElementById('rr').value=Math.round(bmi);
+      if(bmi<18)
+      document.getElementById('result').innerHTML="Under Weight";
+      else if(bmi>25)
+      document.getElementById('result').innerHTML="Over Weigtht"
+
+
+      }
+
+        </script>
+
+
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+      
+    
+</body>
+</html>
